@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<input type="text" id="search" placeholder="Search student">
+
+<div class="card"><h4>Rahul</h4></div>
+<div class="card"><h4>Ankit</h4></div>
+<div class="card"><h4>Priya</h4></div>
+
+<script>
+  $("#search").keyup(function () {
+    let value = $(this).val().toLowerCase();
+
+    $(".card").each(function () {
+      let name = $(this).text().toLowerCase();
+      $(this).toggle(name.includes(value));
+    });
+  });
+</script>
+
+</body>
+</html>

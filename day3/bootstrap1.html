@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- REQUIRED for responsive Bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bootstrap Grid Demo</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+  >
+
+  <style>
+    /* Just for visual understanding */
+    .box {
+      background-color: #0d6efd;
+      color: white;
+      padding: 20px;
+      border: 2px solid white;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= CONTAINER ================= -->
+  <div class="container mt-4">
+    <!-- 
+      container:
+      - Fixed width container
+      - Width changes at breakpoints
+    -->
+
+    <h2 class="text-center mb-4">Bootstrap Grid Demo</h2>
+
+    <!-- ================= ROW ================= -->
+    <div class="row">
+      <!-- 
+        row:
+        - Creates a horizontal flex container
+        - Columns must be inside a row
+      -->
+
+ 
+      <div class="col-4 box">Column 1</div>
+      <div class="col-4 box">Column 2</div>
+      <div class="col-4 box">Column 3</div>
+
+      <!-- 
+        col-4:
+        - Bootstrap grid has 12 columns
+        - 4 + 4 + 4 = 12
+      -->
+    </div>
+
+  </div>
+
+
+  <!-- =================================================== -->
+  <!-- ================= OTHER GRID EXAMPLES ============== -->
+  <!-- =================================================== -->
+
+  <!--
+  ================= AUTO WIDTH COLUMNS =================
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col box">Auto</div>
+      <div class="col box">Auto</div>
+      <div class="col box">Auto</div>
+    </div>
+  </div>
+  -->
+
+
+  <!--
+  ================= RESPONSIVE COLUMNS =================
+  col-sm-6 col-md-4 col-lg-3
+  Meaning:
+  - Mobile (default): full width
+  - >=576px (sm): 2 columns
+  - >=768px (md): 3 columns
+  - >=992px (lg): 4 columns
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-3 box">Box</div>
+      <div class="col-sm-6 col-md-4 col-lg-3 box">Box</div>
+      <div class="col-sm-6 col-md-4 col-lg-3 box">Box</div>
+      <div class="col-sm-6 col-md-4 col-lg-3 box">Box</div>
+    </div>
+  </div>
+  -->
+
+
+  <!--
+  ================= ROW COLUMNS =================
+  row-cols-3:
+  - Automatically creates 3 equal columns
+  <div class="container mt-4">
+    <div class="row row-cols-3">
+      <div class="col box">1</div>
+      <div class="col box">2</div>
+      <div class="col box">3</div>
+      <div class="col box">4</div>
+    </div>
+  </div>
+  -->
+
+
+  <!--
+  ================= COLUMN OFFSET =================
+  offset-3:
+  - Leaves 3 columns empty from left
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-6 offset-3 box">Centered Column</div>
+    </div>
+  </div>
+  -->
+
+
+  <!--
+  ================= NESTED GRID =================
+  Grid inside grid
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-6 box">
+        Parent
+        <div class="row mt-2">
+          <div class="col-6 box">Child</div>
+          <div class="col-6 box">Child</div>
+        </div>
+      </div>
+      <div class="col-6 box">Parent</div>
+    </div>
+  </div>
+  -->
+
+
+  <!-- Bootstrap JS (optional) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- IMPORTANT: Responsive behavior ke liye -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Flexbox Responsive Navbar</title>
+
+  <style>
+    /* ========== BASIC RESET ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* box-sizing: border-box;
+         padding & border width ke andar count hoga */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* ========== NAVBAR CONTAINER ========== */
+    .navbar {
+      display: flex;
+      /* flexbox enable */
+
+      justify-content: space-between;
+      /* logo left, menu right */
+
+      align-items: center;
+      /* vertically center */
+
+      padding: 15px 30px;
+      background-color: #222;
+    }
+
+    /* ========== LOGO ========== */
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* ========== NAV LINKS ========== */
+    .nav-links {
+      display: flex;
+      /* li ko row mein laane ke liye */
+
+      list-style: none;
+      /* bullets remove */
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+      /* items ke beech gap */
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+      /* hover effect */
+    }
+
+    /* ========== MENU BUTTON (MOBILE) ========== */
+    .menu-btn {
+      display: none;
+      /* desktop pe hide */
+
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* ========== RESPONSIVE (MOBILE) ========== */
+    @media (max-width: 768px) {
+
+      .menu-btn {
+        display: block;
+        /* mobile pe menu icon show */
+      }
+
+      .nav-links {
+        flex-direction: column;
+        /* row se column */
+
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+
+        background-color: #222;
+        display: none;
+        /* default hidden */
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+        /* menu open */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">MySite</div>
+
+    <!-- MENU BUTTON (☰) -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <!-- NAV LINKS -->
+    <ul class="nav-links" id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- JS (sirf menu toggle ke liye) -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+      /* active class add/remove */
+    }
+  </script>
+
+</body>
+</html>

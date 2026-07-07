@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<form>
+    <h2>Student Registration Form</h2>
+
+    <!-- Text Input -->
+    <label>Full Name</label>
+    <input type="text" id="nameInput" placeholder="Enter your name" required>
+    <span id="greeting"></span>
+    <!-- Email -->
+    <label>Email</label>
+    <input type="email" placeholder="Enter your email" required>
+
+    <!-- Password -->
+    <label>Password</label>
+    <input type="password" placeholder="Create password" required>
+
+    <!-- Number -->
+    <label>Mobile Number</label>
+    <input type="number" placeholder="Enter mobile number">
+
+    <!-- Date -->
+    <label>Date of Birth</label>
+    <input type="date">
+
+    <!-- Radio Buttons -->
+    <label>Gender</label>
+    <div class="inline">
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+    </div>
+
+    <!-- Dropdown -->
+    <label>Course</label>
+    <select>
+        <option>Select Course</option>
+        <option>B.Tech</option>
+        <option>BCA</option>
+        <option>MCA</option>
+        <option>MBA</option>
+    </select>
+
+    <!-- Checkboxes -->
+    <label>Skills</label>
+    <div class="inline">
+        <input type="checkbox"> HTML
+        <input type="checkbox"> CSS
+        <input type="checkbox"> JavaScript
+        <input type="checkbox"> PHP
+    </div>
+
+    <!-- File Upload -->
+    <label>Upload Resume</label>
+    <input type="file">
+
+    <!-- Textarea -->
+    <label>About Yourself</label>
+    <textarea placeholder="Write something about yourself"></textarea>
+
+    <!-- Submit -->
+    <button type="submit">Register</button>
+</form>
+
+</body>
+<script>
+    const nameInput = document.getElementById('nameInput');
+    const greeting = document.getElementById('greeting');
+
+    nameInput.addEventListener('input', function() {
+        const name = nameInput.value.trim();
+        if (name) {
+            greeting.textContent = `Hello, ${name}!`;
+        } else {
+            greeting.textContent = '';
+        }
+    });
+</html>

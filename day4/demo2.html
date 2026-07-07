@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Live Character Counter</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <input type="password" id="password">
+    <label>
+        <input type="checkbox" id="togglePwd"> Show Password
+    </label>
+
+    <script>
+        // jQuery version
+        $("#togglePwd").change(function () {
+            if ($(this).is(":checked")) {
+                $("#password").attr("type", "text");
+            } else {
+                $("#password").attr("type", "password");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

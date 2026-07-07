@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Table Attributes Demo</title>
+</head>
+
+<body>
+
+    <h2>Student Information Table</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0" width="100%" align="center">
+        <!-- Table Header -->
+        <thead>
+            <tr bgcolor="#dddddd">
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Year</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+
+        <!-- Table Body -->
+        <tbody>
+            <tr align="center">
+                <td>101</td>
+                <td>Rahul</td>
+                <td>B.Tech</td>
+                <td>2nd</td>
+                <td>78</td>
+            </tr>
+
+            <tr align="center">
+                <td>102</td>
+                <td>Anita</td>
+                <td>BCA</td>
+                <td>1st</td>
+                <td>85</td>
+            </tr>
+
+            <tr align="center">
+                <td>103</td>
+                <td>Mohit</td>
+                <td>B.Tech</td>
+                <td>3rd</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+
+        <!-- Table Footer -->
+        <tfoot>
+            <tr>
+                <td colspan="4" align="right">
+                    <b>Average Marks</b>
+                </td>
+                <td align="center">
+                    <b>84</b>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+
+    <h2>Time Table Example (Rowspan & Colspan)</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0" width="80%" align="center">
+        <tr bgcolor="#eeeeee">
+            <th>Day</th>
+            <th>9–10</th>
+            <th>10–11</th>
+            <th>11–12</th>
+        </tr>
+
+        <tr align="center">
+            <td>Monday</td>
+            <td rowspan="2">Maths</td>
+            <td>Physics</td>
+            <td>Chemistry</td>
+        </tr>
+
+        <tr align="center">
+            <td>Tuesday</td>
+            <td colspan="2">Computer Lab</td>
+        </tr>
+
+        <tr align="center">
+            <td>Wednesday</td>
+            <td>English</td>
+            <td>Maths</td>
+            <td>Physics</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Events Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      background: lightblue;
+      margin-top: 10px;
+      text-align: center;
+      line-height: 150px;
+      cursor: pointer;
+    }
+
+    .output {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>JavaScript Events Demo</h2>
+
+  <!-- CLICK EVENT -->
+  <!-- Fires when user clicks the button -->
+  <button onclick="handleClick()">Click Me</button>
+
+  <div class="output" id="clickOutput"></div>
+
+  <hr>
+
+  <!-- DOUBLE CLICK EVENT -->
+  <!-- Fires when user double clicks -->
+  <button ondblclick="handleDoubleClick()">Double Click Me</button>
+
+  <div class="output" id="dblClickOutput"></div>
+
+  <hr>
+
+  <!-- MOUSE EVENTS -->
+  <!-- mouseover: when mouse enters -->
+  <!-- mouseout: when mouse leaves -->
+  <div class="box"
+       onmouseover="mouseOver()"
+       onmouseout="mouseOut()">
+    Hover Me
+  </div>
+
+  <div class="output" id="mouseOutput"></div>
+
+  <hr>
+
+  <!-- KEYBOARD EVENTS -->
+  <!-- keyup: fires when key is released -->
+  <!-- keydown: fires when key is pressed -->
+  <input type="text"
+         placeholder="Type something"
+         onkeyup="keyUpEvent(this.value)"
+         onkeydown="keyDownEvent()">
+
+  <div class="output" id="keyOutput"></div>
+
+  <hr>
+
+  <!-- CHANGE EVENT -->
+  <!-- Fires when value is changed -->
+  <select onchange="changeEvent(this.value)">
+    <option value="">Select City</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Pune">Pune</option>
+  </select>
+
+  <div class="output" id="changeOutput"></div>
+
+  <hr>
+
+  <!-- FOCUS & BLUR EVENTS -->
+  <!-- focus: when input is selected -->
+  <!-- blur: when input loses focus -->
+  <input type="text"
+         placeholder="Focus & Blur"
+         onfocus="focusEvent()"
+         onblur="blurEvent()">
+
+  <div class="output" id="focusOutput"></div>
+
+  <hr>
+
+  <!-- FORM EVENTS -->
+  <!-- submit: fires on form submission -->
+  <form onsubmit="return submitForm()">
+    <input type="text" placeholder="Enter Name" id="name">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="output" id="submitOutput"></div>
+
+  <hr>
+
+  <!-- WINDOW EVENTS -->
+  <!-- resize: fires when window size changes -->
+  <!-- load: fires when page is fully loaded -->
+
+  <script>
+    /* PAGE LOAD EVENT */
+    window.onload = function () {
+      console.log("Page Loaded Successfully");
+    };
+
+    /* CLICK EVENT FUNCTION */
+    function handleClick() {
+      document.getElementById("clickOutput").innerText = "Button Clicked!";
+    }
+
+    /* DOUBLE CLICK EVENT FUNCTION */
+    function handleDoubleClick() {
+      document.getElementById("dblClickOutput").innerText = "Button Double Clicked!";
+    }
+
+    /* MOUSE OVER EVENT */
+    function mouseOver() {
+      document.getElementById("mouseOutput").innerText = "Mouse Over the box";
+    }
+
+    /* MOUSE OUT EVENT */
+    function mouseOut() {
+      document.getElementById("mouseOutput").innerText = "Mouse Left the box";
+    }
+
+    /* KEY UP EVENT */
+    function keyUpEvent(value) {
+      document.getElementById("keyOutput").innerText = "You typed: " + value;
+    }
+
+    /* KEY DOWN EVENT */
+    function keyDownEvent() {
+      console.log("Key is pressed");
+    }
+
+    /* CHANGE EVENT */
+    function changeEvent(value) {
+      document.getElementById("changeOutput").innerText = "Selected: " + value;
+    }
+
+    /* FOCUS EVENT */
+    function focusEvent() {
+      document.getElementById("focusOutput").innerText = "Input Focused";
+    }
+
+    /* BLUR EVENT */
+    function blurEvent() {
+      document.getElementById("focusOutput").innerText = "Input Blurred";
+    }
+
+    /* FORM SUBMIT EVENT */
+    function submitForm() {
+      let name = document.getElementById("name").value;
+
+      if (name === "") {
+        document.getElementById("submitOutput").innerText = "Name is required!";
+        return false; // stops form submission
+      }
+
+      document.getElementById("submitOutput").innerText = "Form Submitted Successfully!";
+      return false; // demo purpose
+    }
+
+    /* WINDOW RESIZE EVENT */
+    window.onresize = function () {
+      console.log("Window resized: " + window.innerWidth);
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="card">
+  <h4>Rahul</h4>
+  <button class="btn">Show Details</button>
+  <p class="details" style="display:none;">CGPA: 8.4 | CSE</p>
+</div>
+
+<script>
+  $(".btn").click(function () {
+    $('.card').children(".details").slideToggle();
+  });
+</script>
+
+</body>
+</html>
