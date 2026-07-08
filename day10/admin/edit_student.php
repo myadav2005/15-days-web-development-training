@@ -1,3 +1,4 @@
+<?php include "../common/db_connect.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Buttons</title>
+    <title>SB Admin 2 - Cards</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,7 +53,6 @@
             <hr class="sidebar-divider">
 
 
-
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
@@ -64,13 +64,11 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Registration</h6>
-                        <a class="collapse-item active" href="students.html">View Students</a>
+                        <a class="collapse-item active" href="students.php">View Students</a>
                         <a class="collapse-item" href="add_student.html">Add Student</a>
                     </div>
                 </div>
             </li>
-
-
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -79,9 +77,6 @@
             <div class="sidebar-heading">
                 Addons
             </div>
-
-
-
 
 
             <!-- Nav Item - Tables -->
@@ -146,11 +141,6 @@
                         </li>
 
 
-
-
-
-
-
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -183,104 +173,69 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Students</h1>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Edit Student</h1>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+
+                            <!-- Default Card Example -->
+                            <div class="card mb-4">
 
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>College</th>
-                                            <th>Branch</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>College</th>
-                                            <th>Branch</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Tiger Nixon</td>
-                                            <td>Edinburgh@example.com</td>
-                                            <td>SKIT Jaipur</td>
-                                            <td>CSE</td>
-                                            <td class="  ">
-                                                <a href="#" class="btn btn-primary btn-sm">
-                                                    <span class="  text-white-50">
-                                                        <i class="fas fa-edit"></i>
-                                                    </span>
-                                                    <span class="text">Edit</span>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <span class="  text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Delete</span>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Garrett Winters</td>
-                                            <td>Garrett.Winters@example.com</td>
-                                            <td>University of Tokyo</td>
-                                            <td>Data Science</td>
-                                            <td class="  ">
-                                                <a href="#" class="btn btn-primary btn-sm">
-                                                    <span class="  text-white-50">
-                                                        <i class="fas fa-edit"></i>
-                                                    </span>
-                                                    <span class="text">Edit</span>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <span class="  text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Delete</span>
-                                                </a>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Donna Snider</td>
-                                            <td>donna.snider@example.com</td>
-                                            <td>University of New York</td>
-                                            <td>Artifical Intelligence</td>
-                                            <td class="  ">
-                                                <a href="#" class="btn btn-primary btn-sm">
-                                                    <span class="  text-white-50">
-                                                        <i class="fas fa-edit"></i>
-                                                    </span>
-                                                    <span class="text">Edit</span>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <span class="  text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Delete</span>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+
+                                <div class="card-body p-0">
+                                    <!-- Nested Row within Card Body -->
+                                    <div class="row">
+
+                                        <div class="col-lg-7">
+                                            <div class="p-5">
+                                                <h2 class="h4 text-gray-900 mb-4">Update Student Info</h2>
+
+                                                <?php
+                                                $id = $_GET['id'];
+                                                $query = "select * from students where id = $id";
+                                                $result = mysqli_query($conn, $query);
+                                                $data = mysqli_fetch_assoc($result);
+
+                                                // print_r($data);
+                                                // die;
+                                                ?>
+
+                                                <form class="user" action="edit_student_submit.php" method="POST">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control form-control-user"
+                                                            placeholder="Name" name="name" value="<?php echo $data['name'] ?>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control form-control-user"
+                                                            placeholder="Email Address" name="email" value="<?php echo $data['email'] ?>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control form-control-user"
+                                                            placeholder="College" name="college" value="<?php echo $data['college'] ?>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control form-control-user"
+                                                            placeholder="Branch" name="branch" value="<?php echo $data['branch'] ?>">
+                                                    </div>
+                                                    <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+                                                    <button class="btn btn-primary btn-user btn-block">
+                                                        Update Info
+                                                    </button>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
                             </div>
                         </div>
                     </div>

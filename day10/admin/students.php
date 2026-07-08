@@ -1,3 +1,4 @@
+<?php include '../common/db_connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,19 +10,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>SB Admin 2 - Buttons</title>
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -88,7 +86,7 @@
 
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="contacts.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Contacts </span></a>
@@ -115,11 +113,9 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <form class="form-inline">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </form>
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
 
 
@@ -188,7 +184,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Contacts</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Students</h1>
 
 
                     <!-- DataTales Example -->
@@ -203,12 +199,9 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
-                                            <th>Class/Semester</th>
                                             <th>Email</th>
-                                            <th>City</th>
-                                            <th>Mobile #</th>
                                             <th>College</th>
-                                            <th>Message</th>
+                                            <th>Branch</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -216,56 +209,41 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Name</th>
-                                            <th>Class/Semester</th>
                                             <th>Email</th>
-                                            <th>City</th>
-                                            <th>Mobile #</th>
                                             <th>College</th>
-                                            <th>Message</th>
+                                            <th>Branch</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Tiger Nixon</td>
-                                            <td>B Tech 3rd Semester</td>
-                                            <td>Edinburgh@example.com</td>
-                                            <td>Jaipur</td>
-                                            <td>87878878788</td>
-                                            <td>SKIT Jaipur</td>
-                                            <td>Is it full stack?</td>
-                                            <td><button class="btn btn-sm btn-primary">Mark as Read</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Garrett Winters</td>
-                                            <td>B Tech 3rd Semester</td>
-                                            <td>Garrett.Winters@example.com</td>
-                                            <td>Tokyo</td>
-                                            <td>9876543210</td>
-                                            <td>University of Tokyo</td>
-                                            <td>How to get started with React?</td>
-                                            <td><button class="btn btn-sm btn-primary">Mark as Read</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                    $query = "SELECT * from students";
 
+                                    $result = mysqli_query($conn, $query);
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                    ?>
                                         <tr>
-                                            <td>3</td>
-                                            <td>Donna Snider</td>
-                                            <td>B Tech 3rd Semester</td>
-                                            <td>donna.snider@example.com</td>
-                                            <td>New York</td>
-                                            <td>8541236971</td>                                             
-                                            <td>University of New York</td>
-                                            <td>What are the prerequisites for this bootcamp?</td>
-                                            <td><button class="btn btn-sm btn-primary">Mark as Read</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                            <td><?php echo $row['id'] ?></td>
+                                            <td><?php echo $row['name'] ?></td>
+                                            <td><?php echo $row['email'] ?></td>
+                                            <td><?php echo $row['college'] ?></td>
+                                            <td><?php echo $row['branch'] ?></td>
+                                            <td class="  ">
+                                                <a href="edit_student.php?id=<?php echo $row['id'] ?>" class="btn btn-primary btn-sm">
+                                                    <span class="  text-white-50">
+                                                        <i class="fas fa-edit"></i>
+                                                    </span>
+                                                    <span class="text">Edit</span>
+                                                </a>
+                                                <a href="#" class="btn btn-danger btn-sm">
+                                                    <span class="  text-white-50">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                    <span class="text">Delete</span>
+                                                </a>
                                             </td>
                                         </tr>
+                                       <?php } ?>                                           
                                     </tbody>
                                 </table>
                             </div>
