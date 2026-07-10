@@ -1,5 +1,4 @@
 <?php session_start();
-include "../common/db_connect.php";
 if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
     header('location:index.php'); exit;
 }
@@ -15,7 +14,7 @@ if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Cards</title>
+    <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -52,71 +51,52 @@ if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Edit Student</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+
                     </div>
 
+                    <!-- Content Row -->
                     <div class="row">
 
-                        <div class="col-lg-12">
 
-                            <!-- Default Card Example -->
-                            <div class="card mb-4">
-
-
-
-
-                                <div class="card-body p-0">
-                                    <!-- Nested Row within Card Body -->
-                                    <div class="row">
-
-                                        <div class="col-lg-7">
-                                            <div class="p-5">
-                                                <h2 class="h4 text-gray-900 mb-4">Update Student Info</h2>
-
-                                                <?php
-                                                $id = $_GET['id'];
-                                                $query = "select * from students where id = $id";
-                                                $result = mysqli_query($conn, $query);
-                                                $data = mysqli_fetch_assoc($result);
-
-                                                // print_r($data);
-                                                // die;
-                                                ?>
-
-                                                <form class="user" action="edit_student_submit.php" method="POST">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control form-control-user"
-                                                            placeholder="Name" name="name" value="<?php echo $data['name'] ?>">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control form-control-user"
-                                                            placeholder="Email Address" name="email" value="<?php echo $data['email'] ?>">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control form-control-user"
-                                                            placeholder="College" name="college" value="<?php echo $data['college'] ?>">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control form-control-user"
-                                                            placeholder="Branch" name="branch" value="<?php echo $data['branch'] ?>">
-                                                    </div>
-                                                    <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
-                                                    <button class="btn btn-primary btn-user btn-block">
-                                                        Update Info
-                                                    </button>
-
-                                                </form>
-
-                                            </div>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Students</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
-
-
-
                             </div>
                         </div>
+
+
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Contacts</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">50</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -128,7 +108,7 @@ if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Your Website 2021</span>
                     </div>
                 </div>
             </footer>
@@ -159,7 +139,7 @@ if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
