@@ -1,4 +1,5 @@
-<?php include "../common/db_connect.php";
+<?php session_start();
+include "../common/db_connect.php";
 
 
 $name = $_POST['name'];
@@ -18,5 +19,6 @@ where id = $id
 
 $res = mysqli_query($conn, $sql);
 if ($res) {
+    $_SESSION['message'] = 'Student record updated successfully!';
     header('Location: students.php');
 }

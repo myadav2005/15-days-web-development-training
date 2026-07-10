@@ -1,4 +1,5 @@
-<?php include '../common/db_connect.php'; ?>
+<?php session_start();
+include '../common/db_connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -186,11 +187,16 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Students</h1>
 
-
+                    <?php if(isset($_SESSION['message'])){ ?>
+                        <div class="alert alert-success" role="alert">
+                        <?php echo $_SESSION['message'] ?>
+                        </div>
+                    <?php } unset($_SESSION['message']); ?>    
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -235,7 +241,7 @@
                                                     </span>
                                                     <span class="text">Edit</span>
                                                 </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
+                                                <a href="#" onclick="deleteStudent(<?php echo $row['id'] ?>)" class="btn btn-danger btn-sm">
                                                     <span class="  text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
@@ -306,7 +312,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+    <script>
+        function deleteStudent(id){
+            if(confirm('Are you sure want to delete this student record')){
+                window.location = 'delete_student.php?id='+id;
+            }
+        }
+    </script>    
 </body>
 
 </html>
