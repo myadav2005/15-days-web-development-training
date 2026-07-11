@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="dashboard.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -35,7 +35,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Registration</h6>
                 <a class="collapse-item active" href="students.php">View Students</a>
-                <a class="collapse-item" href="add_student.html">Add Student</a>
+                <a class="collapse-item" href="add_student.php">Add Student</a>
             </div>
         </div>
     </li>
@@ -56,7 +56,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="contacts.html">
+        <a class="nav-link" href="contacts.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Contacts </span></a>
     </li>

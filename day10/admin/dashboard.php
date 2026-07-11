@@ -2,6 +2,7 @@
 if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
     header('location:index.php'); exit;
 }
+include '../common/db_connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +34,7 @@ if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <php include "partials/sidebar.php" ?>
+        <?php include "partials/sidebar.php" ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -66,7 +67,15 @@ if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Students</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+<?php
+$query = "SELECT count(*) as total_students from students";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+echo '<a href="students.php">'.$row['total_students'].'</a>';
+?>
+
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>

@@ -34,7 +34,7 @@ if(!isset($_SESSION['is_loggedin']) ||  $_SESSION['is_loggedin'] !== true){
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <php include "partials/sidebar.php" ?>
+        <?php include "partials/sidebar.php" ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

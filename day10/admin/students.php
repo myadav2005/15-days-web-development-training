@@ -33,7 +33,7 @@ include '../common/db_connect.php'; ?>
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <php include "partials/sidebar.php" ?>
+        <?php include "partials/sidebar.php" ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -88,8 +88,15 @@ include '../common/db_connect.php'; ?>
                                     </tfoot>
                                     <tbody>
                                     <?php
-                                    $query = "SELECT * from students";
+                                    $search_keyword =  isset($_GET['q'])?$_GET['q']:'';
 
+                                    // testmahesh
+                                    //  mahesh
+                                    // // tmahesh
+                                    // testmaheshtest
+
+                                    $query = "SELECT * from students where name LIKE '%$search_keyword%'";
+ 
                                     $result = mysqli_query($conn, $query);
                                     while ($row = mysqli_fetch_assoc($result)) {
                                     ?>

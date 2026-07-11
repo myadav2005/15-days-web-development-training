@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <php include "partials/sidebar.php" ?>
+        <?php include "partials/sidebar.php" ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
